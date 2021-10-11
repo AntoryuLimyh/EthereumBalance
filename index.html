@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script> <!-- use this as web3  -->
     
-    base_url = "https://mainnet.infura.io/v3/"
+   
 
     <!-- <script type="text/javascript" src="https://raw.githubusercontent.com/ChainSafe/web3.js/1.x/dist/web3.min.js"></script> -->
     <script type="text/javascript">
+        
+        base_url = "https://mainnet.infura.io/v3/"
+        
         window.addEventListener('load', function () {
             if (typeof web3 !== 'undefined') {
                 console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
