@@ -16,11 +16,11 @@
         window.addEventListener('load', function () {
             if (typeof web3 !== 'undefined') {
                 console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
-                base_url = "https://mainnet.infura.io/v3/"
-               window.web3 = new Web3(new Web3.providers.HttpProvider(base_url  + ${{ secrets.INFURAAPI}}));
+               
+               window.web3 = new Web3(new Web3.providers.HttpProvider(${{ secrets.INFURAMAIN}}));
             } else {
                 console.log('No Web3 Detected... using HTTP Provider')
-                window.web3 = new Web3(new Web3.providers.HttpProvider(base_url  + "${{ secrets.INFURAAPI}}"));
+                window.web3 = new Web3(new Web3.providers.HttpProvider(${{ secrets.INFURAMAIN}}));
             }
         });
     </script>
