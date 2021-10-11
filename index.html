@@ -11,11 +11,12 @@
     <!-- <script type="text/javascript" src="https://raw.githubusercontent.com/ChainSafe/web3.js/1.x/dist/web3.min.js"></script> -->
     <script type="text/javascript">
         
-        base_url = "https://mainnet.infura.io/v3/"
+        
         
         window.addEventListener('load', function () {
             if (typeof web3 !== 'undefined') {
                 console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
+                base_url = "https://mainnet.infura.io/v3/"
                window.web3 = new Web3(new Web3.providers.HttpProvider(base_url  + ${{ secrets.INFURAAPI}}));
             } else {
                 console.log('No Web3 Detected... using HTTP Provider')
