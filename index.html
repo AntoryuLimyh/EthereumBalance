@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script> <!-- use this as web3  -->
+    
+    base_url = "https://mainnet.infura.io/v3/"
 
     <!-- <script type="text/javascript" src="https://raw.githubusercontent.com/ChainSafe/web3.js/1.x/dist/web3.min.js"></script> -->
     <script type="text/javascript">
         window.addEventListener('load', function () {
             if (typeof web3 !== 'undefined') {
                 console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
-               window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/" + ${{ secrets.INFURAAPI}}));
+               window.web3 = new Web3(new Web3.providers.HttpProvider(base_url  + ${{ secrets.INFURAAPI}}));
             } else {
                 console.log('No Web3 Detected... using HTTP Provider')
-                window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/" + "${{ secrets.INFURAAPI}}"));
+                window.web3 = new Web3(new Web3.providers.HttpProvider(base_url  + "${{ secrets.INFURAAPI}}"));
             }
         });
     </script>
