@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script> <!-- use this as web3  -->
 
-   
+    <!-- <script type="text/javascript" src="https://raw.githubusercontent.com/ChainSafe/web3.js/1.x/dist/web3.min.js"></script> -->
     <script type="text/javascript">
         window.addEventListener('load', function () {
             if (typeof web3 !== 'undefined') {
                 console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
-                window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/551d00703f1b4a5aa0a6bcbbc857b18a"));
+               window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/" + ${{ secrets.INFURAAPI}}));
             } else {
                 console.log('No Web3 Detected... using HTTP Provider')
                 window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/" + ${{ secrets.INFURAAPI}}));
@@ -337,4 +337,6 @@ token.addEventListener('click', () => {
 
           }
 
-
+</script>
+</body>
+</html>
